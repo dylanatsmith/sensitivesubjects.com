@@ -11,18 +11,11 @@
 @import "typography/font-variables";
 @import "typography/global-typography";
 
-/* Sections */
-@import "sections/header";
-
-/* Components */
-@import "components/panels";
-@import "components/input";
-@import "components/output";
-
 /* Elements */
 @import "elements/buttons";
-@import "elements/images";
 @import "elements/inputs";
 
-/* Plugins */
-@import "plugins/jquery-minicolors";
+/* Components */
+
+/* Sections */
+@import "sections/header";
