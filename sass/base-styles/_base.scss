@@ -1,0 +1,24 @@
+html {
+  height:     100%;
+  background: $black;
+  font-size:  16px;
+}
+
+body {
+    margin: 0 auto;
+    padding-bottom: 2.0rem;
+    width:  100%;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+img {
+    max-width: 100%;
+}
