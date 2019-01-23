@@ -204,7 +204,6 @@ dirtyWords = [
   'yed'
 ]
 
-
 $(document).ready ->
 
   # When user clicks
