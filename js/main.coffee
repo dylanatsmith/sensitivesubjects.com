@@ -230,9 +230,6 @@ $(document).ready ->
           exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
           $('.results__list').append $('<li class="results__example">').append(exampleAccident)
 
-          # then stop the loop
-          # return false
-
       # If there are any examples
       if $('.results__example').length
         # set the results text to something negative

@@ -6,9 +6,7 @@ return $("button").click(function(){var u,e;// Remove any old results
 // Check each dirty word
 return $(".results__list").empty(),// Take the input
 e=$("input").val(),// and split it into words at each space.
-u=e.split(" "),$.each(a,function(e,s){// then stop the loop
-// return false
-// If there are any examples
+u=e.split(" "),$.each(a,function(e,s){// If there are any examples
 // against each input word
 return $.each(u,function(e,a){var t;// to see if the input word starts with it
 if(a.toLowerCase().startsWith(s))
