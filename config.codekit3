@@ -16,6 +16,13 @@
 		"oAP": "/.gitattributes",
 		"oF": 0
 		},
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/.gitignore",
+		"oF": 0
+		},
 	"/.htaccess": {
 		"cB": 0,
 		"ft": 8192,
@@ -120,6 +127,17 @@
 		"oAP": "/assets/img/favicon/site.webmanifest",
 		"oF": 0
 		},
+	"/assets/img/jazzcup.png": {
+		"ft": 32768,
+		"iS": 582955,
+		"oA": 0,
+		"oAP": "/assets/img/jazzcup.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/build/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
@@ -185,19 +203,6 @@
 		"oS": 3,
 		"uL": 1
 		},
-	"/sass/base-styles/_grid.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/sass/css/_grid.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
 	"/sass/base-styles/_normalize.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -211,45 +216,6 @@
 		"oS": 3,
 		"uL": 1
 		},
-	"/sass/components/_input.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/sass/css/_input.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
-	"/sass/components/_output.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/sass/css/_output.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
-	"/sass/components/_panels.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/sass/css/_panels.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
 	"/sass/elements/_buttons.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -259,19 +225,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/sass/css/_buttons.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
-	"/sass/elements/_images.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/sass/css/_images.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -328,7 +281,7 @@
 		"oS": 3,
 		"uL": 1
 		},
-	"/sass/plugins/_jquery-minicolors.scss": {
+	"/sass/sections/_footer.scss": {
 		"aP": 1,
 		"bl": 0,
 		"dP": 10,
@@ -336,7 +289,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/sass/css/_jquery-minicolors.css",
+		"oAP": "/sass/css/_footer.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1

@@ -4,7 +4,6 @@
 
 /* Base styles */
 @import "base-styles/normalize";
-@import "base-styles/grid";
 @import "base-styles/base";
 
 /* Typography */
@@ -19,3 +18,4 @@
 
 /* Sections */
 @import "sections/header";
+@import "sections/footer";
