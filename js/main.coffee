@@ -208,8 +208,11 @@ $(document).ready ->
 
   # When user clicks
   $( 'button' ).click ->
+
+    # Remove any old results
+    $('.results__list').empty()
     
-    # take the input
+    # Take the input
     originalMessage = $( 'input' ).val()
     # and split it into words at each space.
     messageAsArray = originalMessage.split( ' ' )
@@ -225,7 +228,7 @@ $(document).ready ->
         
           # Give an example of the subject line gone wrong
           exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
-          $( '.example' ).text( exampleAccident )
+          $('.results__list').append $('<li>').append(exampleAccident)
 
           # then stop the loop
-          return false
+          # return false
