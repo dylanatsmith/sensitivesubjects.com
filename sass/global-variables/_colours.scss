@@ -1,10 +1,9 @@
-$base:   #222;
+$white: #fff;
 
-$black:  $base;
-$medium: lighten( $base, 50% );
-$light:  lighten( $base, 80% );
-$white:  lighten( $base, 85% );
+$grey-light: #F1F1F1;
+$grey-medium: #A7A2A2;
+$grey-dark: #161515;
 
-$accent:  #5285BF;
-$warning: #EE5568;
-$success: #52BFA3;
+$pink-light: #EFD9D7;
+$pink-medium: #EB7B75;
+$pink-dark: #D1625D;

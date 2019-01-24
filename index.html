@@ -38,27 +38,32 @@
 </head>
 <body>
 
-  <header>
+  <header class="header">
     <h1>Sensitive Subjects</h1>
     <p>Check your subject lines and preheaders</p>
   </header>
 
-  <main>
+  <main class="main">
   
     <label for="input"></label>
     <input type="text" id="input">
     <button class="submit">Check</button>
-      
-    <h2>Results</h2>
 
-    <h3></h3>
-    <p class="example"></p>
+    <div class="results">
+      <h2 class="results__heading">Uh Oh</h2>
+      <p class="results__explanation">You might have trouble. Check carefully.</p>
+      <ul class="results__list">
+        <li class="results__example">Example</li>
+        <li class="results__example">Example</li>
+        <li class="results__example">Example</li>
+      </ul>
+    </div>
 
   </main>
 
-  <footer>
-    <p>Created by Dylan Smith</p>
-    <p>Clever name by <img src="assets/img/jazzcup.png" alt="Josh Jazzcup" class="footer__jazzcup"></p>
+  <footer class="footer">
+    <a href="https://dylanatsmith.com" class="footer__credit">Created by Dylan Smith</a>
+    <a href="https://twitter.com/joshjazzcup" class="footer__credit">Clever name by <img src="assets/img/jazzcup.png" alt="Josh Jazzcup" class="footer__jazzcup"></a>
   </footer>
 
 

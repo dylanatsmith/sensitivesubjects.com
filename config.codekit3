@@ -307,6 +307,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/sass/sections/_main.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/sass/css/_main.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/sass/typography/_font-variables.scss": {
 		"aP": 1,
 		"bl": 0,

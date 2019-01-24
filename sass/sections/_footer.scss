@@ -1,3 +1,14 @@
+.footer {
+	background: $white;
+	margin-top: 6rem;
+	padding: 2rem 6rem;
+}
+
+.footer__credit {
+	display: inline-block;
+	text-decoration: none;
+}
+
 .footer__jazzcup {
 	height: 1.5rem;
 	width: auto;

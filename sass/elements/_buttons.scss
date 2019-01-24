@@ -1,9 +1,9 @@
 .button {
-	background:     #fff;
-	border: 	      1px solid $light;
+	background:     $white;
+	border: 	      1px solid $pink-medium;
 	border-radius:  0.1875rem;
 	box-shadow:     0 4px 2px -3px rgba(0,0,0,0.1);
-	color:          $black;
+	color:          $grey-dark;
 	font-size:      $font-size-sm;
 	font-weight:    $font-weight-bold;
 	line-height:    1.0;
@@ -14,13 +14,4 @@
 	position:       relative;
 	text-transform: uppercase;
 	transition:     $transition-all-short;
-
-	&:hover {
-		background:   $light;
-	}
-
-	&:active {
-		background:   darken($light, 10%);
-		border-color: darken($light, 10%);
-	}
 }
