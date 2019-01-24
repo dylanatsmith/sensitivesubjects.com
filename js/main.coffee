@@ -228,7 +228,18 @@ $(document).ready ->
         
           # Give an example of the subject line gone wrong
           exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
-          $('.results__list').append $('<li>').append(exampleAccident)
+          $('.results__list').append $('<li class="results__example">').append(exampleAccident)
 
           # then stop the loop
           # return false
+
+      # If there are any examples
+      if $('.results__example').length
+        # set the results text to something negative
+        $('.results__heading').text('Uh oh')
+        $('.results__explanation').text('You might have a problem')
+
+      else
+        # set the results heading to something positive
+        $('.results__heading').text('You good')
+        $('.results__explanation').text('Everything looks fine')

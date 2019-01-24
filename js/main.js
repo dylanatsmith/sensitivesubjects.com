@@ -6,10 +6,16 @@ return $("button").click(function(){var u,e;// Remove any old results
 // Check each dirty word
 return $(".results__list").empty(),// Take the input
 e=$("input").val(),// and split it into words at each space.
-u=e.split(" "),$.each(a,function(e,t){
+u=e.split(" "),$.each(a,function(e,s){// then stop the loop
+// return false
+// If there are any examples
 // against each input word
-return $.each(u,function(e,a){var s;// to see if the input word starts with it
-if(a.toLowerCase().startsWith(t))
+return $.each(u,function(e,a){var t;// to see if the input word starts with it
+if(a.toLowerCase().startsWith(s))
 // Give an example of the subject line gone wrong
-return s=u.slice(0,e).join(" ")+" "+t+"...",$(".results__list").append($("<li>").append(s))})})})})}).call(void 0);
+return t=u.slice(0,e).join(" ")+" "+s+"...",$(".results__list").append($('<li class="results__example">').append(t))}),$(".results__example").length?(
+// set the results text to something negative
+$(".results__heading").text("Uh oh"),$(".results__explanation").text("You might have a problem")):(
+// set the results heading to something positive
+$(".results__heading").text("You good"),$(".results__explanation").text("Everything looks fine"))})})})}).call(void 0);
 //# sourceMappingURL=main.js.map
