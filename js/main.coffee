@@ -217,6 +217,14 @@ $(document).ready ->
     # and split it into words at each space.
     messageAsArray = originalMessage.split( ' ' )
 
+    accidentsList = []
+
+    # Get current time for inbox preview
+    currentTime = new Date(Date.now())
+    currentHour = ('0' + currentTime.getHours()).slice -2
+    currentMins = ('0' + currentTime.getMinutes()).slice -2
+    time = currentHour + ':' + currentMins
+
     # Check each dirty word
     $.each dirtyWords, (dirtyIndex, dirtyValue) ->
       
@@ -228,26 +236,29 @@ $(document).ready ->
         
           # Give an example of the subject line gone wrong
           exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
-          $('.results__list').append $('<li class="results__example">').append(exampleAccident)
+          # Add example to list
+          accidentsList.push exampleAccident
 
           # If there are any examples
-          if $('.results__example').length
+          if $(accidentsList).length
             # set the results text to something negative
             $('.results__heading').text('Uh oh')
             $('.results__explanation').text('You might have a problem')
-
-            # Get current time for inbox preview
-            currentTime = new Date(Date.now())
-            currentHour = ('0' + currentTime.getHours()).slice -2
-            currentMins = ('0' + currentTime.getMinutes()).slice -2
-            time = currentHour + ':' + currentMins
             
             # Set inbox preview
             $('.inbox').fadeIn()
             $('.inbox__subject').text(exampleAccident)
             $('.inbox__time').text(time)
+            
 
-          else
-            # set the results heading to something positive
-            $('.results__heading').text('You good')
-            $('.results__explanation').text('Everything looks fine')
+    console.log accidentsList
+
+    if accidentsList.length == 0
+      # set the results heading to something positive
+      $('.results__heading').text('You good')
+      $('.results__explanation').text('Everything looks fine')
+
+      # Set inbox preview
+      $('.inbox').fadeIn()
+      $('.inbox__subject').text(originalMessage)
+      $('.inbox__time').text(time)
