@@ -230,13 +230,24 @@ $(document).ready ->
           exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
           $('.results__list').append $('<li class="results__example">').append(exampleAccident)
 
-      # If there are any examples
-      if $('.results__example').length
-        # set the results text to something negative
-        $('.results__heading').text('Uh oh')
-        $('.results__explanation').text('You might have a problem')
+          # If there are any examples
+          if $('.results__example').length
+            # set the results text to something negative
+            $('.results__heading').text('Uh oh')
+            $('.results__explanation').text('You might have a problem')
 
-      else
-        # set the results heading to something positive
-        $('.results__heading').text('You good')
-        $('.results__explanation').text('Everything looks fine')
+            # Get current time for inbox preview
+            currentTime = new Date(Date.now())
+            currentHour = ('0' + currentTime.getHours()).slice -2
+            currentMins = ('0' + currentTime.getMinutes()).slice -2
+            time = currentHour + ':' + currentMins
+            
+            # Set inbox preview
+            $('.inbox').fadeIn()
+            $('.inbox__subject').text(exampleAccident)
+            $('.inbox__time').text(time)
+
+          else
+            # set the results heading to something positive
+            $('.results__heading').text('You good')
+            $('.results__explanation').text('Everything looks fine')
