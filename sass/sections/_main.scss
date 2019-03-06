@@ -1,11 +1,19 @@
 .main {
 	flex-grow: 1;
-	padding: 0 6rem;
+	padding: 0 4rem;
+}
+
+.form {
+	margin-bottom: 4rem;
 }
 
 .results {
   &__list {
 		display: none;
+	}
+
+	& + .inbox {
+		margin-top: 1rem;
 	}
 }
 
