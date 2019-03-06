@@ -208,15 +208,13 @@ $(document).ready ->
 
   # When user clicks
   $( 'button' ).click ->
-
-    # Remove any old results
-    $('.results__list').empty()
     
     # Take the input
     originalMessage = $( 'input' ).val()
     # and split it into words at each space.
     messageAsArray = originalMessage.split( ' ' )
 
+    # Define list of accidents as empty
     accidentsList = []
 
     # Get current time for inbox preview
@@ -240,12 +238,12 @@ $(document).ready ->
           accidentsList.push exampleAccident
 
           # If there are any examples
-          if $(accidentsList).length
+          if accidentsList.length
             # set the results text to something negative
             $('.results__heading').text('Uh oh')
             $('.results__explanation').text('You might have a problem')
             
-            # Set inbox preview
+            # Show the first one in the inbox preview
             $('.inbox').fadeIn()
             $('.inbox__subject').text(exampleAccident)
             $('.inbox__time').text(time)
@@ -253,12 +251,13 @@ $(document).ready ->
 
     console.log accidentsList
 
+    # If there are no bad words found
     if accidentsList.length == 0
       # set the results heading to something positive
       $('.results__heading').text('You good')
       $('.results__explanation').text('Everything looks fine')
 
-      # Set inbox preview
+      # and show the full subject line in the inbox preview
       $('.inbox').fadeIn()
       $('.inbox__subject').text(originalMessage)
       $('.inbox__time').text(time)
