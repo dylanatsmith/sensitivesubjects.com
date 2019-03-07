@@ -214,8 +214,9 @@ $(document).ready ->
     # and split it into words at each space.
     messageAsArray = originalMessage.split( ' ' )
 
-    # Define list of accidents as empty
+    # Define lists as empty
     accidentsList = []
+    dirtyWordsFound = []
 
     # Get current time for inbox preview
     currentTime = new Date(Date.now())
@@ -232,27 +233,28 @@ $(document).ready ->
         # to see if the input word starts with it
         if messageValue.toLowerCase().startsWith(dirtyValue)
         
-          # Give an example of the subject line gone wrong
+          # Give a truncated example of the subject line gone wrong
           exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
+          # Add word to list
+          dirtyWordsFound.push dirtyValue
           # Add example to list
           accidentsList.push exampleAccident
 
           # If there are any examples
           if accidentsList.length
+
             # set the results text to something negative
             $('.results__heading').text('Uh oh')
             $('.results__explanation').text('You might have a problem')
-            
-            # Show the first one in the inbox preview
+
+            # and show the first example in the inbox preview
             $('.inbox').fadeIn()
             $('.inbox__subject').text(exampleAccident)
             $('.inbox__time').text(time)
-            
-
-    console.log accidentsList
 
     # If there are no bad words found
     if accidentsList.length == 0
+      
       # set the results heading to something positive
       $('.results__heading').text('You good')
       $('.results__explanation').text('Everything looks fine')
