@@ -52,8 +52,8 @@
 	&__item {
 		align-items: center;
 		background: $white;
-		border-top: 1px solid $grey-light;
-		border-bottom: 1px solid $grey-light;
+		border-top: 0.0625rem solid $grey-light;
+		border-bottom: 0.0625rem solid $grey-light;
 		display: flex;
 		padding: 0.5rem 0.75rem;
 		pointer-events: none;
@@ -62,7 +62,7 @@
 
 	&__icon {
 		border-radius: 50%;
-		background: blue;
+		background: $neutral-medium;
 		height: 1.5rem;
 		margin-right: 0.75rem;
 		width: 1.5rem;
@@ -79,7 +79,7 @@
 		font-weight: $font-weight-semibold;
 		margin-left: 0.75rem;
 		position: relative;
-		top: 1px;
+		top: 0.0625rem;
 	}
 }
 
