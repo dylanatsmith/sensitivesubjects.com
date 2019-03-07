@@ -1,3 +1,11 @@
 .header {
-	margin: 4rem;
+	margin-top: 3rem;
+
+	&__title {
+		font-size: $font-size-lg;
+	}
+
+	&__tagline {
+		font-size: $font-size-md;
+	}
 }

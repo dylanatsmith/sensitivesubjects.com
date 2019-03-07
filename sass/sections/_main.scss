@@ -1,43 +1,61 @@
 .main {
 	flex-grow: 1;
-	padding: 0 4rem;
 }
 
 .form {
-	margin-bottom: 4rem;
-}
+	margin-top: 3rem;
 
-.results {
-  &__list {
-		display: none;
+	&__input {
+		background: $grey-light;
+		border: none;
+		border-radius: 0.25rem;
+		display: block;
+		font-size: $font-size-lg;
+		line-height: 1;
+		outline: none;
+		padding: 0.75rem;
+		transition: $transition-all-short;
+		width: 100%;
+
+		&:hover {
+			background: $grey-medium;
+		}
 	}
 
-	& + .inbox {
-		margin-top: 1rem;
+	&__button {
+		appearance: none;
+		background: $blue-medium;
+		border: none;
+		border-radius: 0.125rem;
+		color: $white;
+		display: inline-block;
+		font-size: $font-size-md;
+		font-weight: $font-weight-semibold;
+		line-height: 1;
+		margin-top: 0.5rem;
+		outline: none;
+		padding: 1rem;
+		transition: $transition-all-short;
+
+		&:hover {
+			background: $grey-dark;
+		}
 	}
 }
-
 
 .inbox {
-	background: $white;
-	border-radius: 0.125rem;
-	box-shadow: 0 0 0.5 -0.5 rgba(0,0,0,0.35);
 	display: none;
-	padding: 1rem;
+	margin: 5rem auto 0;
 	width: max-content;
 
 	&__item {
 		align-items: center;
 		border-top: 1px solid $grey-light;
 		border-bottom: 1px solid $grey-light;
-		cursor: pointer;
 		display: flex;
 		padding: 0.5rem 0.75rem;
+		pointer-events: none;
 		transition: $transition-all-short;
-
-		&:hover {
-			background: $grey-light;
-		}
 	}
 
 	&__icon {
@@ -60,5 +78,12 @@
 		margin-left: 0.75rem;
 		position: relative;
 		top: 1px;
+	}
+}
+
+
+.results {
+  &__list {
+		display: none;
 	}
 }
