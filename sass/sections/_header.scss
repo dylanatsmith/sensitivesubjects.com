@@ -1,11 +1,13 @@
 .header {
-	margin-top: 3rem;
+	margin: 3rem auto 0;
+	text-align: center;
 
 	&__title {
-		font-size: $font-size-lg;
+		font-size: $font-size-xxxl;
 	}
 
 	&__tagline {
 		font-size: $font-size-md;
+		margin-top: 0.5rem;
 	}
 }
