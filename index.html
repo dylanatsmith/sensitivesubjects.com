@@ -39,23 +39,15 @@
 <body>
 
   <header class="header">
-    <h1>Sensitive Subjects</h1>
-    <p>Check your subject lines and preheaders</p>
+    <h1 class="header__title">Sensitive Subjects</h1>
+    <p class="header__tagline">Check your subject lines and preheaders for unhappy accidents</p>
   </header>
 
   <main class="main">
     
     <div class="form">
-      <label for="input">Enter your subject line</label>
-      <input type="text" id="input" autofocus>
-      <button class="submit">Check</button>
-    </div>
-
-    <div class="results">
-      <h2 class="results__heading">Hmm...</h2>
-      <p class="results__explanation">Enter a subject line to see your results</p>
-      <ul class="results__list">
-      </ul>
+      <input type="text" id="input" class="form__input" autofocus required>
+      <button class="form__button">Check This</button>
     </div>
 
     <div class="inbox">
@@ -65,6 +57,13 @@
         <div class="inbox__subject">This subject has been anal...</div>
         <div class="inbox__time">20:47</div>
       </div>
+    </div>
+
+    <div class="results">
+      <h2 class="results__heading">Hmm...</h2>
+      <p class="results__explanation">Enter a subject line to see your results</p>
+      <ul class="results__list">
+      </ul>
     </div>
 
   </main>
