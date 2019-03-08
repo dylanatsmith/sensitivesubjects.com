@@ -205,7 +205,8 @@ dirtyWords = [
 ]
 
 
-defineResults = ($heading, $explanation) ->
+defineResults = ($heading, $explanation, $state) ->
+  $('.results').attr('class', 'results results--' + $state)
   $('.results__heading').text($heading)
   $('.results__explanation').text($explanation)
 
@@ -265,13 +266,13 @@ $(document).ready ->
             if accidentsList.length # If there are any subject line examples
               defineInbox(exampleAccident, time)
               showInbox(0)
-              defineResults('Uh oh', 'You might have a problem')
+              defineResults('Uh oh', 'You might have a problem', 'danger')
               showResults(150)
 
       if accidentsList.length == 0 # If there are no bad words found
         defineInbox(originalMessage, time)
         showInbox(0)
-        defineResults('All good', 'Everything looks fine')
+        defineResults('All clear', 'That’s a nice looking subject line!', 'success')
         showResults(150)
 
     ), 300
