@@ -1,14 +1,35 @@
 .footer {
-	margin-top: 6rem;
+	margin-top: 4rem;
 	padding-bottom: 1rem;
-}
 
-.footer__credit {
-	display: inline-block;
-	text-decoration: none;
-}
+	&__credit {
+		color: $grey-dark;
+		display: block;
+		margin: 0 auto;
+		text-decoration: none;
+		transition: $transition-all-short;
+		width: max-content;
 
-.footer__jazzcup {
-	height: 1.5rem;
-	width: auto;
+		&:last-of-type {
+			color: $grey-medium;
+			font-size: $font-size-sm;
+			margin-top: 0.5rem;
+			opacity: 0.5;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&:hover {
+			color: $neutral-medium;
+		}
+	}
+
+  &__jazzcup {
+		height: 1.0rem;
+		position: relative;
+		top: -1px;
+		width: auto;
+	}
 }
