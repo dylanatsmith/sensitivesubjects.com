@@ -115,7 +115,7 @@
 
 .results {
 	background: $neutral-light;
-	border-left: 0.25rem solid $neutral-dark;
+	border-left: 0.25rem solid $neutral-medium;
 	border-radius: 0.125rem;
 	display: none;
 	line-height: 1.5;
@@ -124,6 +124,16 @@
 	width: max-content;
 	min-width: 50%;
 	max-width: 100%;
+
+	&--success {
+		background: $success-light;
+		border-color: $success-medium;
+	}
+
+	&--danger {
+		background: $danger-light;
+		border-color: $danger-medium;
+	}
 
 	&__heading {
 		font-size: $font-size-md;
