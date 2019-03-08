@@ -204,6 +204,7 @@ dirtyWords = [
   'yed'
 ]
 
+
 defineResults = ($heading, $explanation) ->
   $('.results__heading').text($heading)
   $('.results__explanation').text($explanation)
