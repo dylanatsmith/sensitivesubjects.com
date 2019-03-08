@@ -165,6 +165,8 @@ dirtyWords = [
   'sex'
   'sharmuta'
   'sharmute'
+  'shart'
+  'shat'
   'shemale'
   'shipal'
   'shit'
