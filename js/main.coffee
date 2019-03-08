@@ -228,53 +228,65 @@ showInbox = ($duration) ->
     $('.inbox').fadeIn()
   ), $duration
 
+durationShort = 150
+durationMedium = 300
+
 
 $(document).ready ->
 
   $( 'button' ).click ->
 
     # Fade out old inbox preview and results box
-    $('.inbox').fadeOut(150)
-    $('.results').fadeOut(150)
+    $('.inbox').fadeOut(durationShort)
+    $('.results').fadeOut(durationShort)
 
-    # Reset lists
-    accidentsList = []
-    dirtyWordsFound = []
-
-    # Split input into words at each space
     originalMessage = $( 'input' ).val()
-    messageAsArray = originalMessage.split( ' ' )
 
-    # Get current time for inbox preview
-    currentTime = new Date(Date.now())
-    currentHour = ('0' + currentTime.getHours()).slice -2
-    currentMins = ('0' + currentTime.getMinutes()).slice -2
-    time = currentHour + ':' + currentMins
 
-    setTimeout (-> # Delay everything so boxes don't change before disappearing
+    if originalMessage == ''
 
-      $.each dirtyWords, (dirtyIndex, dirtyValue) -> # Check each dirty word
-        
-        $.each messageAsArray, (messageIndex, messageValue) -> # against each input word
+      defineResults('WTF', 'You have to enter something', 'danger')
+      showResults(durationShort)
+
+    else
+
+      # Reset lists
+      accidentsList = []
+      dirtyWordsFound = []
+
+      # Split input into words at each space
+      messageAsArray = originalMessage.split( ' ' )
+
+      # Get current time for inbox preview
+      currentTime = new Date(Date.now())
+      currentHour = ('0' + currentTime.getHours()).slice -2
+      currentMins = ('0' + currentTime.getMinutes()).slice -2
+      time = currentHour + ':' + currentMins
+
+      setTimeout (-> # Delay everything so boxes don't change before disappearing
+
+        $.each dirtyWords, (dirtyIndex, dirtyValue) -> # Check each dirty word
           
-          if messageValue.toLowerCase().startsWith(dirtyValue) # to see if the input word starts with it
+          $.each messageAsArray, (messageIndex, messageValue) -> # against each input word
+            
+            if messageValue.toLowerCase().startsWith(dirtyValue) # to see if the input word starts with it
 
-            dirtyWordsFound.push dirtyValue # Add word to list
+              dirtyWordsFound.push dirtyValue # Add word to list
 
-            # Give a truncated example of the subject line gone wrong and add it to list
-            exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
-            accidentsList.push exampleAccident
+              # Give a truncated example of the subject line gone wrong and add it to list
+              exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
+              accidentsList.push exampleAccident
 
-            if accidentsList.length # If there are any subject line examples
-              defineInbox(exampleAccident, time)
-              showInbox(0)
-              defineResults('Uh oh', 'You might have a problem', 'danger')
-              showResults(150)
+              if accidentsList.length # If there are any subject line examples
+                defineInbox(exampleAccident, time)
+                showInbox(0)
+                defineResults('Uh oh', 'You might have a problem', 'danger')
+                showResults(durationShort)
 
-      if accidentsList.length == 0 # If there are no bad words found
-        defineInbox(originalMessage, time)
-        showInbox(0)
-        defineResults('All clear', 'That’s a nice looking subject line!', 'success')
-        showResults(150)
+        if accidentsList.length == 0 # If there are no bad words found
+          defineInbox(originalMessage, time)
+          showInbox(0)
+          defineResults('All clear', 'That’s a nice looking subject line!', 'success')
+          showResults(durationShort)
 
-    ), 300
+      ), durationMedium
