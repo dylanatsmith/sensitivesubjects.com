@@ -204,19 +204,42 @@ dirtyWords = [
   'yed'
 ]
 
+defineResults = ($heading, $explanation) ->
+  $('.results__heading').text($heading)
+  $('.results__explanation').text($explanation)
+
+defineInbox = ($subject, $time) ->
+  $('.inbox__subject').text($subject)
+  $('.inbox__time').text($time)
+
+# Fade in results div
+showResults = ($duration) ->
+  setTimeout (->
+    $('.results').fadeIn()
+  ), $duration
+
+# Fade in inbox preview
+showInbox = ($duration) ->
+  setTimeout (->
+    $('.inbox').fadeIn()
+  ), $duration
+
+
 $(document).ready ->
 
-  # When user clicks
   $( 'button' ).click ->
-    
-    # Take the input
-    originalMessage = $( 'input' ).val()
-    # and split it into words at each space.
-    messageAsArray = originalMessage.split( ' ' )
 
-    # Define lists as empty
+    # Fade out old inbox preview and results box
+    $('.inbox').fadeOut(150)
+    $('.results').fadeOut(150)
+
+    # Reset lists
     accidentsList = []
     dirtyWordsFound = []
+
+    # Split input into words at each space
+    originalMessage = $( 'input' ).val()
+    messageAsArray = originalMessage.split( ' ' )
 
     # Get current time for inbox preview
     currentTime = new Date(Date.now())
@@ -224,63 +247,30 @@ $(document).ready ->
     currentMins = ('0' + currentTime.getMinutes()).slice -2
     time = currentHour + ':' + currentMins
 
-    # Fade out old inbox preview and results box
-    $('.inbox').fadeOut(150)
-    $('.results').fadeOut(150)
+    setTimeout (-> # Delay everything so boxes don't change before disappearing
 
-    # Delay everything else so the boxes don't change before disappearing
-    setTimeout (->
-
-      # Check each dirty word
-      $.each dirtyWords, (dirtyIndex, dirtyValue) ->
+      $.each dirtyWords, (dirtyIndex, dirtyValue) -> # Check each dirty word
         
-        # against each input word
-        $.each messageAsArray, (messageIndex, messageValue) ->
+        $.each messageAsArray, (messageIndex, messageValue) -> # against each input word
           
-          # to see if the input word starts with it
-          if messageValue.toLowerCase().startsWith(dirtyValue)
-          
-            # Give a truncated example of the subject line gone wrong
+          if messageValue.toLowerCase().startsWith(dirtyValue) # to see if the input word starts with it
+
+            dirtyWordsFound.push dirtyValue # Add word to list
+
+            # Give a truncated example of the subject line gone wrong and add it to list
             exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
-            # Add word to list
-            dirtyWordsFound.push dirtyValue
-            # Add example to list
             accidentsList.push exampleAccident
 
-            # If there are any examples
-            if accidentsList.length
+            if accidentsList.length # If there are any subject line examples
+              defineInbox(exampleAccident, time)
+              showInbox(0)
+              defineResults('Uh oh', 'You might have a problem')
+              showResults(150)
 
-              # show the first example in the inbox preview
-              $('.inbox__subject').text(exampleAccident)
-              $('.inbox__time').text(time)
-              setTimeout (->
-                $('.inbox').fadeIn()
-              ), 0
-
-              # set the results text to something negative
-              $('.results__heading').text('Uh oh')
-              $('.results__explanation').text('You might have a problem')
-              # and fade it in
-              setTimeout (->
-                $('.results').fadeIn()
-              ), 150
-
-      # If there are no bad words found
-      if accidentsList.length == 0
-
-        # show the full subject line in the inbox preview
-        $('.inbox__subject').text(originalMessage)
-        $('.inbox__time').text(time)
-        setTimeout (->
-          $('.inbox').fadeIn()
-        ), 0
-        
-        # set the results heading to something positive
-        $('.results__heading').text('You good')
-        $('.results__explanation').text('Everything looks fine')
-        # and fade it in
-        setTimeout (->
-          $('.results').fadeIn()
-        ), 150
+      if accidentsList.length == 0 # If there are no bad words found
+        defineInbox(originalMessage, time)
+        showInbox(0)
+        defineResults('All good', 'Everything looks fine')
+        showResults(150)
 
     ), 300
