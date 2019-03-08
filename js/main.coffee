@@ -224,42 +224,63 @@ $(document).ready ->
     currentMins = ('0' + currentTime.getMinutes()).slice -2
     time = currentHour + ':' + currentMins
 
-    # Check each dirty word
-    $.each dirtyWords, (dirtyIndex, dirtyValue) ->
-      
-      # against each input word
-      $.each messageAsArray, (messageIndex, messageValue) ->
+    # Fade out old inbox preview and results box
+    $('.inbox').fadeOut(150)
+    $('.results').fadeOut(150)
+
+    # Delay everything else so the boxes don't change before disappearing
+    setTimeout (->
+
+      # Check each dirty word
+      $.each dirtyWords, (dirtyIndex, dirtyValue) ->
         
-        # to see if the input word starts with it
-        if messageValue.toLowerCase().startsWith(dirtyValue)
+        # against each input word
+        $.each messageAsArray, (messageIndex, messageValue) ->
+          
+          # to see if the input word starts with it
+          if messageValue.toLowerCase().startsWith(dirtyValue)
+          
+            # Give a truncated example of the subject line gone wrong
+            exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
+            # Add word to list
+            dirtyWordsFound.push dirtyValue
+            # Add example to list
+            accidentsList.push exampleAccident
+
+            # If there are any examples
+            if accidentsList.length
+
+              # show the first example in the inbox preview
+              $('.inbox__subject').text(exampleAccident)
+              $('.inbox__time').text(time)
+              setTimeout (->
+                $('.inbox').fadeIn()
+              ), 0
+
+              # set the results text to something negative
+              $('.results__heading').text('Uh oh')
+              $('.results__explanation').text('You might have a problem')
+              # and fade it in
+              setTimeout (->
+                $('.results').fadeIn()
+              ), 150
+
+      # If there are no bad words found
+      if accidentsList.length == 0
+
+        # show the full subject line in the inbox preview
+        $('.inbox__subject').text(originalMessage)
+        $('.inbox__time').text(time)
+        setTimeout (->
+          $('.inbox').fadeIn()
+        ), 0
         
-          # Give a truncated example of the subject line gone wrong
-          exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
-          # Add word to list
-          dirtyWordsFound.push dirtyValue
-          # Add example to list
-          accidentsList.push exampleAccident
+        # set the results heading to something positive
+        $('.results__heading').text('You good')
+        $('.results__explanation').text('Everything looks fine')
+        # and fade it in
+        setTimeout (->
+          $('.results').fadeIn()
+        ), 150
 
-          # If there are any examples
-          if accidentsList.length
-
-            # set the results text to something negative
-            $('.results__heading').text('Uh oh')
-            $('.results__explanation').text('You might have a problem')
-
-            # and show the first example in the inbox preview
-            $('.inbox').fadeIn()
-            $('.inbox__subject').text(exampleAccident)
-            $('.inbox__time').text(time)
-
-    # If there are no bad words found
-    if accidentsList.length == 0
-      
-      # set the results heading to something positive
-      $('.results__heading').text('You good')
-      $('.results__explanation').text('Everything looks fine')
-
-      # and show the full subject line in the inbox preview
-      $('.inbox').fadeIn()
-      $('.inbox__subject').text(originalMessage)
-      $('.inbox__time').text(time)
+    ), 300
