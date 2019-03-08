@@ -42,6 +42,10 @@
 			background: $grey-dark;
 		}
 	}
+
+	& + .results {
+		margin-top: 4rem;
+	}
 }
 
 .inbox {
