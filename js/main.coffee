@@ -245,8 +245,10 @@ $(document).ready ->
 
     if originalMessage == ''
 
-      defineResults('WTF', 'You have to enter something', 'danger')
-      showResults(durationShort)
+      setTimeout (->
+        defineResults('Hmm...', 'You can’t just send nothing.', 'danger')
+        showResults(durationShort)
+      ), durationMedium
 
     else
 
@@ -280,7 +282,7 @@ $(document).ready ->
               if accidentsList.length # If there are any subject line examples
                 defineInbox(exampleAccident, time)
                 showInbox(0)
-                defineResults('Uh oh', 'You might have a problem', 'danger')
+                defineResults('Uh oh', 'Does that look right to you?', 'danger')
                 showResults(durationShort)
 
         if accidentsList.length == 0 # If there are no bad words found
