@@ -52,7 +52,9 @@
 	display: none;
 	margin: 4rem auto 0;
 	max-width: 100%;
+	pointer-events: none;
 	position: relative;
+	user-select: none;
 	width: max-content;
 
 	&::before,
