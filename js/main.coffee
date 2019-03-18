@@ -253,7 +253,6 @@ checkUrl = ->
     $( '.form__button' ).trigger('click')
 
 
-
 $(document).ready ->
 
   $( '.form__button' ).click ->
@@ -315,5 +314,8 @@ $(document).ready ->
 
       ), durationMedium
 
+      messageForUrl = encodeURIComponent(originalMessage)
+      console.log('https://sensitivesubjects.com?subject=' + messageForUrl)
+      $( '.copy__url' ).text('https://sensitivesubjects.com?subject=' + messageForUrl)
 
   checkUrl()
