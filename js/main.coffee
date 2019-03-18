@@ -248,7 +248,6 @@ urlSubject = getParameterByName('subject')
 
 checkUrl = ->
   if urlSubject != ('' || null)
-    console.log(urlSubject)
     $('input').val(urlSubject)
     $( '.form__button' ).trigger('click')
 
@@ -296,8 +295,12 @@ $(document).ready ->
 
               dirtyWordsFound.push dirtyValue # Add word to list
 
+              # Check if this word is the last word in the original message
               # Give a truncated example of the subject line gone wrong and add it to list
-              exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue + '...'
+              if ((messageIndex + 1) == messageAsArray.length) && (dirtyValue == messageValue.toLowerCase())
+                exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue
+              else
+                exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue +  '...'
               accidentsList.push exampleAccident
 
               if accidentsList.length # If there are any subject line examples
@@ -315,7 +318,6 @@ $(document).ready ->
       ), durationMedium
 
       messageForUrl = encodeURIComponent(originalMessage)
-      console.log('https://sensitivesubjects.com?subject=' + messageForUrl)
       $( '.copy__url' ).text('https://sensitivesubjects.com?subject=' + messageForUrl)
 
   checkUrl()
