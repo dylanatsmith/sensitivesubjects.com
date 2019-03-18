@@ -231,6 +231,27 @@ showInbox = ($duration) ->
 durationShort = 150
 durationMedium = 300
 
+# Get params from URL
+getParameterByName = (name, url) ->
+  if !url
+    url = window.location.href
+  name = name.replace(/[\[\]]/g, '\\$&')
+  regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)')
+  results = regex.exec(url)
+  if !results
+    return null
+  if !results[2]
+    return ''
+  decodeURIComponent results[2].replace(/\+/g, ' ')
+
+urlSubject = getParameterByName('subject')
+
+checkUrl = ->
+  if urlSubject != ('' || null)
+    console.log(urlSubject)
+    $('input').val(urlSubject)
+    $( '.form__button' ).trigger('click')
+
 
 
 $(document).ready ->
@@ -295,22 +316,4 @@ $(document).ready ->
       ), durationMedium
 
 
-  # Get params from URL
-  getParameterByName = (name, url) ->
-    if !url
-      url = window.location.href
-    name = name.replace(/[\[\]]/g, '\\$&')
-    regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)')
-    results = regex.exec(url)
-    if !results
-      return null
-    if !results[2]
-      return ''
-    decodeURIComponent results[2].replace(/\+/g, ' ')
-
-  urlSubject = getParameterByName('subject')
-
-  if urlSubject != ''
-    console.log(urlSubject)
-    $('input').val(urlSubject)
-    $( '.form__button' ).trigger('click')
+  checkUrl()
