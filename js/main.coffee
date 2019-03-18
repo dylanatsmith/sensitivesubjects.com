@@ -296,9 +296,8 @@ $(document).ready ->
               dirtyWordsFound.push dirtyValue # Add word to list
 
               # Check if this word is the last word in the original message
-              # Give a truncated example of the subject line gone wrong and add it to list
               if ((messageIndex + 1) == messageAsArray.length) && (dirtyValue == messageValue.toLowerCase())
-                exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue
+                exampleAccident = originalMessage
               else
                 exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue +  '...'
               accidentsList.push exampleAccident
