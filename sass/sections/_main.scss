@@ -224,6 +224,10 @@
 		font-size: $font-size-md;
 		font-weight: $font-weight-bold;
 	}
+
+	&__explanation {
+		line-height: 1.25;
+	}
 }
 
 .copy {
