@@ -39,41 +39,48 @@
 </head>
 <body>
 
-  <header class="header">
-    <h1 class="header__title">Sensitive Subjects</h1>
-    <p class="header__tagline">Don’t get caught sending an embarrassing subject line or preheader</p>
-  </header>
+  <div class="wrapper wrapper--main">
 
-  <main class="main">
-    
-    <div class="form">
-      <input type="text" id="input" class="form__input" autofocus required placeholder="Your great subject line">
-      <button class="form__button">Test It Out</button>
-    </div>
+    <main class="main">
 
-    <div class="inbox">
-      <div class="inbox__item">
-        <div class="inbox__icon"></div>
-        <div class="inbox__sender">Sensitive Subjects</div>
-        <div class="inbox__subject"></div>
-        <div class="inbox__time"></div>
+      <div class="header">
+        <h1 class="header__title">Sensitive Subjects</h1>
+        <p class="header__tagline">Never send an embarrassing subject line!</p>
       </div>
-    </div>
+      
+      <div class="form">
+        <input type="text" id="input" class="form__input" autofocus required placeholder="Your great subject line">
+        <button class="form__button">Test It Out</button>
+      </div>
 
-    <div class="results">
-      <h2 class="results__heading"></h2>
-      <p class="results__explanation"></p>
-    </div>
+      <div class="inbox">
+        <div class="inbox__item">
+          <div class="inbox__icon"></div>
+          <div class="inbox__sender">Sensitive Subjects</div>
+          <div class="inbox__subject"></div>
+          <div class="inbox__time"></div>
+        </div>
+      </div>
 
-    <p class="copy__url"></p>
+      <div class="results">
+        <h2 class="results__heading"></h2>
+        <p class="results__explanation"></p>
+      </div>
 
-  </main>
+      <p class="copy__url"></p>
 
-  <footer class="footer">
-    <a href="https://dylanatsmith.com" target="_blank" class="footer__credit">Created by Dylan Smith</a>
-    <p class="footer__credit">Clever name by <img src="assets/img/jazzcup.png" alt="Josh Jazzcup" class="footer__jazzcup"></a>
-  </footer>
+    </main>
+    
+  </div>
 
+  <div class="wrapper wrapper--footer">
+
+    <footer class="footer">
+      <a href="https://dylanatsmith.com" target="_blank" class="footer__credit">Created by Dylan Smith</a>
+      <button href="" class="footer__copy">Copy link to your results</button>
+    </footer>
+    
+  </div>
 
 </body>
 </html>

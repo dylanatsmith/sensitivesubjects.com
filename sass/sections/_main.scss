@@ -1,15 +1,33 @@
 .main {
-	flex-grow: 1;
+	margin: 0 auto;
+	min-width: $content-min-width;
+  max-width: $content-max-width;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+
+	margin-top: 2rem;
+
+	&__title {
+		font-size: $font-size-xxl;
+		font-weight: 800;
+	}
+
+	&__tagline {
+		font-size: $font-size-lg;
+	}
 }
 
 .form {
-	display: flex;
 	margin-top: 4rem;
 
 	&__input {
 		background: $grey-light;
 		border: none;
-		border-radius: 0.25rem 0 0 0.25rem;
+		border-radius: 0.1875rem;
 		display: block;
 		font-size: $font-size-lg;
 		line-height: 1;
@@ -27,12 +45,13 @@
 		appearance: none;
 		background: $grey-dark;
 		border: none;
-		border-radius: 0 0.25rem 0.25rem 0;
+		border-radius: 0.1875rem;
 		color: $white;
 		display: inline-block;
 		font-size: $font-size-md;
 		font-weight: $font-weight-semibold;
 		line-height: 1;
+		margin-top: 0.25rem;
 		outline: none;
 		padding: 1rem;
 		transition: $transition-all-short;

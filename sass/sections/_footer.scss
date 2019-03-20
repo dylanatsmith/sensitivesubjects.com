@@ -1,36 +1,29 @@
 .footer {
-	margin-top: 4rem;
-	padding-bottom: 1rem;
+
+	margin: 0 auto;
+	min-width: $content-min-width;
+  max-width: $content-max-width;
+
+	padding: 4rem 0;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
 	&__credit {
 		color: $grey-dark;
-		display: block;
-		margin: 0 auto;
 		text-decoration: none;
 		transition: $transition-all-short;
-		width: max-content;
 
 		&:hover {
 			color: $neutral-medium;
 		}
 	}
 
-  p {
-		color: $grey-medium;
-		font-size: $font-size-sm;
-		margin-top: 0.5rem;
-		opacity: 1;
-
-		&:hover {
-			color: $grey-medium;
-		}
+	&__copy {
+		appearance: none;
+		background: transparent;
+		border: none;
 	}
 
-  &__jazzcup {
-		height: 1.0rem;
-		margin-left: 0.125rem;
-		position: relative;
-		top: -1px;
-		width: auto;
-	}
 }
