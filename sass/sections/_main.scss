@@ -141,7 +141,7 @@
 	}
 
 	&__sender {
-		font-weight: $font-weight-semibold;
+		font-weight: $font-weight-bold;
 		margin-right: 2rem;
 		white-space: nowrap;
 	}
@@ -155,7 +155,7 @@
 	&__time {
 		color: $grey-medium;
 		font-size: $font-size-xs;
-		font-weight: $font-weight-semibold;
+		font-weight: $font-weight-bold;
 		margin-left: 0.75rem;
 		position: relative;
 		top: 0.0625rem;
@@ -163,29 +163,27 @@
 }
 
 .results {
-	background: $neutral-light;
-	border-left: 0.25rem solid $neutral-medium;
 	border-radius: 0.125rem;
+	color: $white;
 	display: none;
 	line-height: 1.5;
 	margin: 2rem auto 0;
-	padding: 0.75rem 1.5rem;
+	padding: 1rem 1.25rem;
 	width: max-content;
 	min-width: 50%;
 	max-width: 100%;
 
 	&--success {
-		background: $success-light;
-		border-color: $success-medium;
+		background: $success-medium;
 	}
 
 	&--danger {
-		background: $danger-light;
-		border-color: $danger-medium;
+		background: $danger-medium;
 	}
 
 	&__heading {
 		font-size: $font-size-md;
+		font-weight: $font-weight-bold;
 	}
 }
 
