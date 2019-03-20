@@ -164,14 +164,16 @@
 
 .results {
 	border-radius: 0.125rem;
+	bottom: 1rem;
 	color: $white;
 	display: none;
 	line-height: 1.5;
-	margin: 2rem auto 0;
 	padding: 1rem 1.25rem;
-	width: max-content;
-	min-width: 50%;
+	min-width: 20rem;
 	max-width: 100%;
+	position: absolute;
+	right: 1rem;
+	z-index: 1;
 
 	&--success {
 		background: $success-medium;
