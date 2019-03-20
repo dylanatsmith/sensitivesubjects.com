@@ -4,28 +4,50 @@
   max-width: $content-max-width;
 
   padding-bottom: 4rem;
+
+  @media only screen and (max-width: 800px) {
+  	min-width: 100%;
+  	max-width: 100%;
+  }
 }
 
 .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-
 	margin-top: 2rem;
+
+	@media only screen and (max-width: 700px) {
+  	display: block;
+  	text-align: center;
+  }
 
 	&__title {
 		font-size: $font-size-lg;
 		font-weight: $font-weight-bold;
+
+		@media only screen and (min-width: 458px) and (max-width: 700px) {
+	  	font-size: $font-size-xl;
+	  }
 	}
 
 	&__tagline {
 		font-size: $font-size-lg;
+
+		@media only screen and (min-width: 458px) and (max-width: 700px) {
+	  	font-size: $font-size-xl;
+	  	margin-top: 0.5rem;
+	  }
 	}
 }
 
 .form {
 	margin-top: 4rem;
 	padding: 0 4rem;
+
+	@media only screen and (max-width: 600px) {
+  	padding: 0;
+  }
 
 	&__input {
 		background: $white;
@@ -83,10 +105,6 @@
 		&:hover {
 			background: $neutral-light;
 		}
-	}
-
-	& + .results {
-		margin-top: 4rem;
 	}
 }
 
@@ -174,6 +192,11 @@
 	position: absolute;
 	right: 1rem;
 	z-index: 1;
+
+	@media only screen and (max-width: 425px) {
+		bottom: auto;
+		top: 1rem;
+	}
 
 	&--success {
 		background: $success-medium;
