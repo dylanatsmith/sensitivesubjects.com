@@ -110,12 +110,21 @@
 
 .inbox {
 	display: none;
+	font-size: 1rem;
 	margin: 4rem auto 0;
 	max-width: 100%;
 	pointer-events: none;
 	position: relative;
 	user-select: none;
 	width: max-content;
+
+	@media only screen and (max-width: 425px) {
+  	font-size: 0.5rem;
+  }
+
+  @media only screen and (min-width: 426px) and (max-width: 750px) {
+  	font-size: 0.75rem;
+  }
 
 	&::before,
 	&::after {
@@ -125,7 +134,7 @@
 		height: 100%;
 		position: absolute;
 		top: 0;
-		width: 1.5rem;
+		width: 1.5em;
 	}
 
 	// Before and after pseudos with gradients for fade on inbox preview if desired
@@ -143,7 +152,7 @@
 		border-top: 0.0625rem solid $grey-light;
 		border-bottom: 0.0625rem solid $grey-light;
 		display: flex;
-		padding: 0.5rem 1.25rem;
+		padding: 0.5em 1.25em;
 		pointer-events: none;
 		transition: $transition-all-short;
 	}
@@ -153,14 +162,14 @@
 		background-size: contain;
 		border-radius: 50%;
 		flex-shrink: 0;
-		height: 1.5rem;
-		margin-right: 0.75rem;
-		width: 1.5rem;
+		height: 1.5em;
+		margin-right: 0.75em;
+		width: 1.5em;
 	}
 
 	&__sender {
 		font-weight: $font-weight-bold;
-		margin-right: 2rem;
+		margin-right: 2em;
 		white-space: nowrap;
 	}
 
@@ -172,11 +181,11 @@
 
 	&__time {
 		color: $grey-medium;
-		font-size: $font-size-xs;
+		font-size: 0.75em;
 		font-weight: $font-weight-bold;
-		margin-left: 0.75rem;
+		margin-left: 0.75em;
 		position: relative;
-		top: 0.0625rem;
+		top: 0.0625em;
 	}
 }
 
