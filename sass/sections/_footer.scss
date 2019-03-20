@@ -13,11 +13,29 @@
 	&__credit {
 		color: $grey-dark;
 		text-decoration: none;
-		transition: $transition-all-short;
+		/* transition: $transition-all-short; */
+
+		&:hover {
+			.footer__credit-name::after {
+				width: 1rem;
+			}
+		}
 	}
 
   &__credit-name {
   	font-weight: $font-weight-semibold;
+
+  	&::after {
+			content: '➝';
+			display: inline-block;
+			margin-left: 0.25rem;
+			overflow-x: hidden;
+			padding: 0;
+			position: relative;
+			top: 0.1875rem;
+			transition: $transition-all-medium;
+			width: 0;
+		}
   }
 
 	&__copy {
