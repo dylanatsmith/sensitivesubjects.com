@@ -216,6 +216,9 @@ defineInbox = ($subject, $time) ->
   $('.inbox__subject').text($subject)
   $('.inbox__time').text($time)
 
+# Example subject line
+exampleSubject = 'Do you love analyzing subject lines?'
+
 # Fade in results div
 showResults = ($duration) ->
   setTimeout (->
@@ -249,12 +252,12 @@ urlSubject = getParameterByName('subject')
 checkUrl = ->
   if urlSubject != ('' || null)
     $('input').val(urlSubject)
-    $( '.form__button' ).trigger('click')
+    $( '#test-button' ).trigger('click')
 
 
 $(document).ready ->
 
-  $( '.form__button' ).click ->
+  $( '#test-button' ).click ->
 
     # Fade out old inbox preview and results box
     $('.inbox').fadeOut(durationShort)
@@ -320,3 +323,7 @@ $(document).ready ->
       $( '.copy__url' ).text('https://sensitivesubjects.com?subject=' + messageForUrl)
 
   checkUrl()
+
+  $( '#example-button' ).click ->
+    $('.form__input').val(exampleSubject)
+    $( '#test-button' ).trigger('click')

@@ -45,10 +45,8 @@
 
 	&__button {
 		appearance: none;
-		background: $grey-dark;
 		border: none;
 		border-radius: 0.1875rem;
-		color: $white;
 		display: inline-block;
 		font-size: $font-size-md;
 		font-weight: $font-weight-semibold;
@@ -57,12 +55,27 @@
 		outline: none;
 		padding: 1rem;
 		transition: $transition-all-short;
+		white-space: nowrap;
+	}
+
+	&__button--primary {
+		background: $grey-dark;
+		color: $white;
 		width: 25%;
 		min-width: 7.5rem;
-		white-space: nowrap;
 
 		&:hover {
 			color: $danger-medium;
+		}
+	}
+
+	&__button--secondary {
+		background: transparent;
+		color: $grey-medium;
+		margin-left: 0.25rem;
+
+		&:hover {
+			color: $grey-dark;
 		}
 	}
 
