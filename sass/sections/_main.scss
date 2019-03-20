@@ -36,8 +36,8 @@
 		transition: $transition-all-short;
 		width: 100%;
 
-		&:hover {
-			/* background: $grey-medium; */
+		&:focus {
+			box-shadow: $box-shadow-input;
 		}
 	}
 
