@@ -331,3 +331,10 @@ $(document).ready ->
   $( '#example-button' ).click ->
     $('.form__input').val(exampleSubject)
     $( '#test-button' ).trigger('click')
+
+  $( '#copy-button').click ->
+    $('.results').fadeOut(durationShort)
+    setTimeout (->
+      defineResults('Copied', 'Share the URL to show someone else your results', 'success')
+      showResults(durationShort)
+    ), durationShort
