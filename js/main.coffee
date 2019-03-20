@@ -299,13 +299,19 @@ $(document).ready ->
             
             if messageValue.toLowerCase().startsWith(dirtyValue) # to see if the input word starts with it
 
-              dirtyWordsFound.push dirtyValue # Add word to list
+              # Add word to list
+              dirtyWordsFound.push dirtyValue
+
+              # Gets the dirty word from the original message in original case
+              originalDirty = messageValue.substring(-666, dirtyValue.length)
 
               # Check if this word is the last word in the original message
               if ((messageIndex + 1) == messageAsArray.length) && (dirtyValue == messageValue.toLowerCase())
+                # If so, spit out message as it was entered
                 exampleAccident = originalMessage
               else
-                exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + dirtyValue +  '...'
+                # Truncate message at dirty word
+                exampleAccident = messageAsArray.slice(0, messageIndex).join(' ') + ' ' + originalDirty +  '...'
               accidentsList.push exampleAccident
 
               if accidentsList.length # If there are any subject line examples
