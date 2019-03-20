@@ -29,7 +29,7 @@
 
 	&__input {
 		background: $white;
-		border: 0.0625rem solid $danger-light;
+		border: 0.0625rem solid $neutral-light;
 		border-radius: 0.1875rem;
 		display: block;
 		font-size: $font-size-lg;
@@ -38,6 +38,10 @@
 		padding: 0.75rem;
 		transition: $transition-all-short;
 		width: 100%;
+
+		&::placeholder {
+			color: $neutral-light;
+		}
 
 		&:focus {
 			box-shadow: $box-shadow-input;
@@ -56,29 +60,28 @@
 		margin-top: 0.5rem;
 		outline: none;
 		padding: 1rem;
-		transition: $transition-all-short;
+		transition: $transition-all-medium;
 		white-space: nowrap;
 	}
 
 	&__button--primary {
-		border: 0.0625rem solid $danger-medium;
-		color: $danger-medium;
+		border: 0.0625rem solid $neutral-dark;
+		color: $neutral-dark;
 		width: 25%;
 		min-width: 7.5rem;
 
 		&:hover {
-			background: $danger-medium;
-			color: $white;
+			background: $neutral-light;
 		}
 	}
 
 	&__button--secondary {
 		background: transparent;
-		color: $grey-medium;
+		color: $neutral-dark;
 		margin-left: 0.25rem;
 
 		&:hover {
-			color: $grey-dark;
+			background: $neutral-light;
 		}
 	}
 
@@ -107,12 +110,12 @@
 		width: 1.5rem;
 	}
 
+	// Before and after pseudos with gradients for fade on inbox preview if desired
 	&::before {
-		background: linear-gradient( to right, $background, rgba(252,252,252,0) );
+		background: linear-gradient( to right, $neutral-lightest, rgba(252,252,252,0) );
 	}
-
 	&::after {
-		background: linear-gradient( to left, $background, rgba(252,252,252,0) );
+		background: linear-gradient( to left, $neutral-lightest, rgba(252,252,252,0) );
 		right: 0;
 	}
 
@@ -178,7 +181,7 @@
 
 	&--danger {
 		background: $danger-light;
-		border-color: $danger-medium;
+		border-color: $neutral-dark;
 	}
 
 	&__heading {
