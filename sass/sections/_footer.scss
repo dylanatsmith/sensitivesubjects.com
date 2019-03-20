@@ -14,16 +14,17 @@
 		color: $grey-dark;
 		text-decoration: none;
 		transition: $transition-all-short;
-
-		&:hover {
-			color: $neutral-medium;
-		}
 	}
+
+  &__credit-name {
+  	font-weight: $font-weight-semibold;
+  }
 
 	&__copy {
 		appearance: none;
 		background: transparent;
 		border: none;
+		padding: 0;
 	}
 
 }
