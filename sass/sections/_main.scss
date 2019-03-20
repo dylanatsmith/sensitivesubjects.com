@@ -2,6 +2,8 @@
 	margin: 0 auto;
 	min-width: $content-min-width;
   max-width: $content-max-width;
+
+  padding-bottom: 4rem;
 }
 
 .header {
@@ -12,7 +14,7 @@
 	margin-top: 2rem;
 
 	&__title {
-		font-size: $font-size-xxl;
+		font-size: $font-size-lg;
 		font-weight: 800;
 	}
 
