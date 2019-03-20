@@ -272,7 +272,7 @@ $(document).ready ->
     if originalMessage == ''
 
       setTimeout (->
-        defineResults('Hmm...', 'You can’t just send nothing.', 'danger')
+        defineResults('Hmm...', 'You can’t just send nothing.', 'neutral')
         showResults(durationShort)
       ), durationMedium
 
