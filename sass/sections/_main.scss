@@ -198,6 +198,10 @@
 		top: 1rem;
 	}
 
+	&--neutral {
+		background: $accent-medium;
+	}
+
 	&--success {
 		background: $success-medium;
 	}

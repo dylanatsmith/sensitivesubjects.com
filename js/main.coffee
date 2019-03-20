@@ -335,6 +335,6 @@ $(document).ready ->
   $( '#copy-button').click ->
     $('.results').fadeOut(durationShort)
     setTimeout (->
-      defineResults('Copied', 'Share the URL to show someone else your results', 'success')
+      defineResults('Copied', 'Share the URL to show someone else your results', 'neutral')
       showResults(durationShort)
     ), durationShort
