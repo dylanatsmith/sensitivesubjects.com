@@ -29,7 +29,7 @@
 
 	&__input {
 		background: $white;
-		border: none;
+		border: 0.0625rem solid $danger-light;
 		border-radius: 0.1875rem;
 		display: block;
 		font-size: $font-size-lg;
@@ -46,6 +46,7 @@
 
 	&__button {
 		appearance: none;
+		background: transparent;
 		border: none;
 		border-radius: 0.1875rem;
 		display: inline-block;
@@ -60,13 +61,14 @@
 	}
 
 	&__button--primary {
-		background: $grey-dark;
-		color: $white;
+		border: 0.0625rem solid $danger-medium;
+		color: $danger-medium;
 		width: 25%;
 		min-width: 7.5rem;
 
 		&:hover {
-			color: $danger-medium;
+			background: $danger-medium;
+			color: $white;
 		}
 	}
 
