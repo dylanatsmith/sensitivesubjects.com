@@ -43,6 +43,23 @@
 		background: transparent;
 		border: none;
 		padding: 0;
+
+		&::after {
+			content: '+';
+			display: inline-block;
+			overflow-x: hidden;
+			padding: 0;
+			position: relative;
+			top: 0.125rem;
+			transition: $transition-all-medium;
+			width: 0;
+		}
+
+		&:hover {
+			&::after {
+				width: 1rem;
+			}
+		}
 	}
 
 }
