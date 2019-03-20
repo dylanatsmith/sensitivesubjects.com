@@ -254,6 +254,9 @@ checkUrl = ->
     $('input').val(urlSubject)
     $( '#test-button' ).trigger('click')
 
+copyToClipboard = (url) ->
+  navigator.clipboard.writeText(url)
+
 
 $(document).ready ->
 
@@ -320,7 +323,8 @@ $(document).ready ->
       ), durationMedium
 
       messageForUrl = encodeURIComponent(originalMessage)
-      $( '.copy__url' ).text('https://sensitivesubjects.com?subject=' + messageForUrl)
+      generatedUrl = 'https://sensitivesubjects.com?subject=' + messageForUrl
+      copyToClipboard(generatedUrl)
 
   checkUrl()
 
