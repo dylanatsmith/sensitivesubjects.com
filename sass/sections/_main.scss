@@ -169,8 +169,8 @@
 	display: none;
 	line-height: 1.5;
 	padding: 1rem 1.25rem;
-	min-width: 20rem;
-	max-width: 100%;
+	width: max-content;
+	max-width: calc(100% - 2rem);
 	position: absolute;
 	right: 1rem;
 	z-index: 1;
